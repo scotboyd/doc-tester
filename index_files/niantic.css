@@ -1,0 +1,524 @@
+@import "theme.css";
+@import "faces.css";
+@import "account.css";
+@import "video-js.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+
+html {
+  --color-white: hsl(0 0% 100%);
+  --color-blue-500: #1779c4;
+  --color-black: hsl(0 0% 0%);
+  --color-darkblue: hsl(211deg 82% 13%);
+  --color-lightblue: hsl(192deg 48% 90%);
+  --color-branding: hsl(13 100% 54%);
+  --color-branding-bright: hsl(13 100% 58%);
+  --color-branding-dark: hsl(13 96% 50%);
+  --color-text: var(--color-darkblue);
+  --color-text-reverse: var(--color-white);
+  --color-text-secondary: hsl(0 0% 48%);
+  --color-text-disabled: hsl(0 0% 56%);
+  --color-error: hsl(0 96% 40%);
+  --color-alert: hsl(0 96% 40%);
+  --color-success: hsl(120deg 100% 25%);
+  --color-border: hsl(0 0% 80%);
+  --color-bg: var(--color-white);
+  --color-bg-secondary: hsl(0 0% 96%);
+  --color-bg-disabled: hsl(0 0% 88%);
+  --type-body-fs: 1rem;
+  --type-body-lh: 1.5;
+  --type-caption-fs: 0.8125rem;
+  --type-fw-regular: 500;
+  --type-fw-emphasis: 700;
+  --type-fw-display: 800;
+  --side-nav-background: #deeaed;
+  --page-top-header-color: rgb(81, 81, 81);
+  --note-color: rgba(255, 229, 100, 0.3);
+  --note-color-dark: #c39900;
+  --note-color-darker: #8d7400;
+  --code-background: #f5f5f5;
+  --code-foreground: #000;
+  --font-family-monospace: source-code-pro, Menlo, Monaco, Consolas, Courier New,
+    monospace;
+  background-color: var(--color-bg);
+  box-sizing: border-box;
+  color: var(--color-text);
+  font: var(--type-fw-regular) normal var(--type-body-fs) / var(--type-body-lh)
+      roboto,
+    arial, sans-serif;
+  scroll-behavior: auto;
+}
+
+/*
+.card.w-100.shadow.card150.docutils {
+    width: 150px !important;
+}
+*/
+
+.rst-content .toctree-wrapper > p.caption,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+legend {
+  font-family: gilroy, Arial, sans-serif;
+}
+body {
+  font-family: gilroy, Arial, sans-serif;
+  color: var(--color-text);
+}
+
+/* Image padding */
+img {
+  padding-bottom: 1em
+}
+
+/* Unordered lists */
+
+.rst-content ul {
+  padding-left: 2em
+}
+
+.rst-content ul li {
+  list-style-type: disc !important
+}
+
+/* Ordered lists */
+.rst-content .section ol li {
+  list-style-type: decimal;
+}
+.rst-content .section ol li ol li {
+  list-style-type: lower-alpha;
+}
+.rst-content .section ol li ol li ul li {
+  list-style-type: initial;
+}
+.rst-content .section ol li ol li ol li {
+  list-style-type: lower-roman;
+}
+.rst-content .section ol li ol li ol li ul li {
+  list-style-type: initial;
+}
+
+/* Video spacing */
+div.video {
+  margin: 0 0 24px;
+}
+
+/* Table headers */
+.rst-content table.docutils thead th,
+.rst-content table.field-list thead th,
+.wy-table thead th {
+  color: var(--color-branding);
+}
+
+/* Rainbow table */
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td,
+.wy-table-backed,
+.wy-table-odd td,
+.wy-table-striped tr:nth-child(2n-1) td {
+  background-color: var(--color-bg-secondary);
+}
+
+/* code boxes */
+pre {
+  background-color: var(--color-bg-secondary);
+}
+
+/* notes */
+.rst-content .admonition-title,
+.wy-alert-title {
+  color: var(--color-white);
+  background: var(--color-alert);
+}
+
+.rst-content .note .admonition-title,
+.rst-content .note .wy-alert-title,
+.rst-content .seealso .admonition-title,
+.rst-content .seealso .wy-alert-title,
+.rst-content .wy-alert-info.admonition-todo .admonition-title,
+.rst-content .wy-alert-info.admonition-todo .wy-alert-title,
+.rst-content .wy-alert-info.admonition .admonition-title,
+.rst-content .wy-alert-info.admonition .wy-alert-title,
+.rst-content .wy-alert-info.attention .admonition-title,
+.rst-content .wy-alert-info.attention .wy-alert-title,
+.rst-content .wy-alert-info.caution .admonition-title,
+.rst-content .wy-alert-info.caution .wy-alert-title,
+.rst-content .wy-alert-info.danger .admonition-title,
+.rst-content .wy-alert-info.danger .wy-alert-title,
+.rst-content .wy-alert-info.error .admonition-title,
+.rst-content .wy-alert-info.error .wy-alert-title,
+.rst-content .wy-alert-info.hint .admonition-title,
+.rst-content .wy-alert-info.hint .wy-alert-title,
+.rst-content .wy-alert-info.important .admonition-title,
+.rst-content .wy-alert-info.important .wy-alert-title,
+.rst-content .wy-alert-info.tip .admonition-title,
+.rst-content .wy-alert-info.tip .wy-alert-title,
+.rst-content .wy-alert-info.warning .admonition-title,
+.rst-content .wy-alert-info.warning .wy-alert-title,
+.rst-content .wy-alert.wy-alert-info .admonition-title,
+.wy-alert.wy-alert-info .rst-content .admonition-title,
+.wy-alert.wy-alert-info .wy-alert-title {
+  color: var(--color-white);
+}
+
+.rst-content .admonition,
+.rst-content .admonition-todo,
+.rst-content .attention,
+.rst-content .caution,
+.rst-content .danger,
+.rst-content .error,
+.rst-content .hint,
+.rst-content .important,
+.rst-content .note,
+.rst-content .seealso,
+.rst-content .tip,
+.rst-content .warning,
+.wy-alert {
+  background: var(--color-bg-secondary);
+}
+
+/* Link colors */
+a,
+button {
+  --primary-color: var(--color-blue-500);
+  color: var(--color-blue-500);
+  transition-property: color, background, box-shadow;
+  transition-duration: 0.24s;
+  text-decoration-color: rgb(184, 184, 184);
+}
+
+a:focus,
+a:hover,
+button:focus,
+button:hover,
+a:visited {
+  --primary-color: var(--color-blue-500);
+  color: var(--color-blue-500);
+  text-decoration: underline;
+  text-decoration-color: var(--color-blue-500);
+}
+
+p {
+  line-height: 27px;
+}
+
+a.icon-home,
+a.icon-home:visited {
+  color: var(--color-black);
+}
+
+/* Side nav search box */
+
+.wy-side-scroll {
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+}
+
+.wy-side-nav-search {
+  background-color: var(--side-nav-background);
+  color: var(--color-white);
+}
+
+.wy-nav-top {
+  background-color: var(--side-nav-background);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.wy-nav-top a {
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+@media (min-width: 769px) {
+  .wy-nav-top {
+    display: none;
+  }
+}
+
+.wy-nav-top i {
+  color: var(--color-darkblue);
+  margin-right: 1rem;
+}
+
+.wy-nav-side {
+  width: 330px;
+}
+
+.wy-side-scroll {
+  width: 350px;
+}
+
+@media screen and (max-width: 768px) {
+  .wy-nav-side {
+    left: -330px;
+  }
+}
+
+.wy-side-nav-search > a {
+  display: block;
+  text-align: left;
+}
+
+.wy-side-nav-search .wy-dropdown > a img.logo,
+.wy-side-nav-search > a img.logo {
+  display: block;
+  height: 50px;
+  margin: 0;
+  width: auto;
+}
+
+.wy-side-nav-search > a {
+  text-decoration-line: none;
+}
+.wy-side-nav-search > a:visited {
+  color: var(--color-white);
+}
+
+.wy-side-nav-search > div.version {
+  color: var(--page-top-header-color);
+}
+
+/* Table of contents */
+
+.wy-menu-vertical {
+  float: left; /* this is a hack to get the element itself to resize as text changes, so we can measure it with js */
+  width: auto;
+}
+
+.wy-side-scroll,
+.wy-nav-side {
+  transition: width 0.075s linear;
+}
+
+.wy-nav-content-wrap {
+  transition: margin-left 0.075s linear;
+}
+
+.wy-menu-vertical header,
+.wy-menu-vertical p.caption {
+  color: var(--color-branding);
+}
+
+.wy-nav-side {
+  background-color: var(--side-nav-background);
+  color: var(--color-black);
+}
+
+.wy-menu-vertical ul.current a.reference.internal.current {
+  background-color: var(--side-nav-background);
+  color: var(--color-blue-500);
+}
+
+/* Give the current open menu a darker background */
+.wy-menu-vertical li.current {
+  background: var(--side-nav-background);
+}
+
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.on a {
+  background: transparent;
+}
+
+.wy-menu-vertical li.toctree-l1.current > a {
+  border-top: 0;
+  border-bottom: 0;
+  background: var(--side-nav-background);
+}
+
+.wy-menu-vertical li.toctree-l2.current > a:hover,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover,
+.wy-menu-vertical li.toctree-l3.current > a:hover,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:hover {
+  background: var(--side-nav-background);
+}
+
+.wy-menu-vertical li.current a {
+  border-right: 0;
+}
+
+.wy-menu-vertical li.current a:hover {
+  background: var(--side-nav-background);
+  color: var(--color-blue-500);
+}
+.wy-menu-vertical li.toctree-l1.current > a {
+  padding: 0.405em 2.125em;
+}
+
+.wy-menu-vertical header,
+.wy-menu-vertical p.caption {
+  color: var(--page-top-header-color);
+  padding: 0.405em 2.125em;
+}
+
+.wy-menu-vertical li.current a,
+.wy-menu-vertical li.toctree-l2.current > a {
+  padding: 0.405em 3em;
+}
+
+/* Fixing theme.css overrides */
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l3.current > a,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
+  background: var(--side-nav-background);
+}
+
+.rst-content .toctree-wrapper ol li > *,
+.rst-content .toctree-wrapper ul li > *,
+.rst-content .toctree-wrapper ul li > ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.wy-menu-vertical a:hover {
+  background: var(--side-nav-background);
+  color: var(--color-blue-500);
+  cursor: pointer;
+}
+
+.wy-menu-vertical a {
+  color: var(--color-text);
+  padding: 0.405em 2.125em;
+  text-decoration-line: none;
+  font-size: 0.9rem;
+}
+
+.wy-nav-content {
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .wy-nav-content .rst-content {
+    max-width: 86%;
+    margin: 0 auto;
+  }
+}
+
+.admonition.note {
+  padding-left: 6px;
+  border-left: 7px solid;
+  background-color: var(--note-color);
+  border-color: var(--note-color-dark);
+  color: var(--note-color-darker);
+  padding: 12px 12px 12px 16px;
+  border-radius: 4px;
+  line-height: 1.1;
+}
+
+.admonition.note p {
+  line-height: 1.3;
+}
+
+.rst-content .note .admonition-title {
+  background: transparent;
+  margin: 0;
+  padding: 0 0 0.25em;
+  display: block;
+  color: var(--note-color-dark);
+}
+
+/* Fix excessive table overflow. Allows table columns to wrap text*/
+.wy-table-responsive table td,
+.wy-table-responsive table th {
+  white-space: normal;
+}
+
+.fa-minus-square-o:before,
+.wy-menu-vertical li.current > a button.toctree-expand:before,
+.wy-menu-vertical li.on a button.toctree-expand:before,
+.wy-menu-vertical li button.toctree-expand:before {
+  content: "\f0da";
+}
+
+.wy-menu-vertical li.current > a button.toctree-expand:before {
+  transform: rotate(90deg);
+}
+
+.wy-menu-vertical a:hover button.toctree-expand {
+  color: var(--color-black);
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1em;
+  }
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  .footer-links ul {
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+}
+
+.footer-links li {
+  margin-right: 1em;
+}
+
+.copyright {
+  padding-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  .copyright {
+    padding-bottom: 0;
+  }
+
+/* Required style for swapimage sphinx extension */
+.swapimage {
+  position: relative;
+  display: inline-block
+}
+
+.swapimage .hover-image {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.swapimage:hover .hover-image {
+  display: inline;
+}
+
+.maptiles-images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: left;
+  justify-content: left;
+}
+
+.maptiles-images img {
+  width: 180px;
+  height: 180px;
+  padding: 5px 5px 5px 5px;
+}
+
+.maptiles-images figcaption {
+  text-align: center;
+}
+
+.maptiles-photos {
+  display: block;  
+}
+
+.maptiles-photos img {
+  max-height: 45px;
+  max-width: 80px;
+}
+
+}
